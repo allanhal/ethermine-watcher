@@ -1,5 +1,7 @@
-## Ethermine Watcher (Chrome Extension)
+## Ethermine Watcher (Chrome Extension transformed into web site)
 Watch your Ethermine hashrate, balance, ETA until payout and more.
 
-### Install
-- [Get it on the Chrome web store](https://chrome.google.com/webstore/detail/mnlfoooikhmcaomegmfopecjngldnmmn/publish-accepted?authuser=3)
+## Ethermine Watcher (extensão do chrome transformada em website)
+Monitore na Ethermine o seu Hashrate, saldo, previsão do próximo pagamento e mais.
+
+- [https://ethermine-watcher.vercel.app/](https://ethermine-watcher.vercel.app/)
