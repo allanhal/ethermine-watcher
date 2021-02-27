@@ -1,0 +1,18 @@
+{
+  "name": "ethermine-watcher",
+  "version": "1.0.0",
+  "description": "Watch your Ethermine hashrate, balance, ETA until payout and more.",
+  "scripts": {
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allanhal/ethermine-watcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allanhal/ethermine-watcher/issues"
+  },
+  "homepage": "https://github.com/allanhal/ethermine-watcher#readme"
+}

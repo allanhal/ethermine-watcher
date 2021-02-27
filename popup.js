@@ -166,9 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // address entry page
       if (debug) console.log('error=' + error);
       if (error != 'first') if (obj.data.addr) localStorage.setItem('addr', obj.data.addr);
-      if (error == 'noaddr') document.body.innerHTML += '<div id="error">Please enter an address.</div>';
+      if (error == 'noaddr') document.body.innerHTML += '<div id="error">Adicione uma carteira.</div>';
       else if (error == 'invalidaddr') {
-        document.body.innerHTML += '<div id="error">Not a valid address. Please try again.</div>';
+        document.body.innerHTML += '<div id="error">Carteira inválida. Tente novamente.</div>';
         localStorage.setItem('addr', '');
       }
       document.body.innerHTML += 'Adicionar carteira:<br><input id="addr" size="30"> <button id="add">Adicionar</button><br>';
