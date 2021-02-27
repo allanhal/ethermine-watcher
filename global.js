@@ -113,12 +113,9 @@ function updateBadge(r,cs){
 	if(debug) console.log('updateBadge()');
 	if(!r.nodata){
 		r=getETA(r);
-		var title='Hashrate: '+cs.hashrate+'\nBalance: '+cs.unpaid+' / '+cs.minpayout+'\nETA: '+r.eta+'\nDay / Month / Year ('+r.currency+')\n'+cs.curpd+' / '+cs.curpm+' / '+cs.curpy;
+		var title='Hashrate: '+cs.hashrate+'\nValor a ser pago: '+cs.unpaid+' / '+cs.minpayout+'\nETA: '+r.eta+'\nDay / Month / Year ('+r.currency+')\n'+cs.curpd+' / '+cs.curpm+' / '+cs.curpy;
 		var text=cs.unpaid.substr(0,5)==0?'0':cs.unpaid.replace(/^0+/,'').substr(0,4);
 	} else var title='No data',text='0';
-	chrome.browserAction.setTitle({title:title});
-	chrome.browserAction.setBadgeBackgroundColor({color:'#222'});
-	chrome.browserAction.setBadgeText({text:text});
 }
 
 function getETA(r){
@@ -146,9 +143,11 @@ function calcStats(r){
 		hashrate:BigNumber(r.data.reportedHashrate).div('1000000').toFixed(1)+' MH/s',
 		unpaid:BigNumber(r.data.unpaid.toString()).div('1000000000000000000').toFixed(8),
 		minpayout:BigNumber(r.data.minPayout.toString()).div('1000000000000000000'),
+		coinsph:BigNumber(r.data.coinsPerMin.toString()).times(1440).times(0.0416666667).toFixed(5),
 		coinspd:BigNumber(r.data.coinsPerMin.toString()).times(1440).toFixed(5),
 		coinspm:BigNumber(r.data.coinsPerMin.toString()).times(1440).times(30).toFixed(5),
 		coinspy:BigNumber(r.data.coinsPerMin.toString()).times(1440).times(365).toFixed(5),
+		curph:BigNumber(r.data.usdPerMin.toString()).times(r.rates[r.currency]).times(1440).times(0.0416666667).toFixed(2),
 		curpd:BigNumber(r.data.usdPerMin.toString()).times(r.rates[r.currency]).times(1440).toFixed(2),
 		curpm:BigNumber(r.data.usdPerMin.toString()).times(r.rates[r.currency]).times(1440).times(30).toFixed(2),
 		curpy:BigNumber(r.data.usdPerMin.toString()).times(r.rates[r.currency]).times(1440).times(365).toFixed(2)
